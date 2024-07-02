@@ -1,0 +1,75 @@
+@import "../../../vendors/bootstrap/scss/dropdown";
+
+// ------------------
+// # Dropdown
+// ------------------
+
+// # Dropdown
+// 
+
+$dropdown-menu-background: $white;
+$dropdown-menu-border-radius: 5px;
+$dropdown-menu-shadow: $shadow-1;
+
+$dropdown-menu-item-font-size: 14px;
+$dropdown-menu-item-font-weight: $font-weight-normal;
+$dropdown-menu-item-background__hover: $alice-blue;
+$dropdown-menu-item-background__focus: $dropdown-menu-item-background__hover;
+$dropdown-menu-item-background__active: $primary;
+$dropdown-menu-item-color: $dark;
+$dropdown-menu-item-color__hover: $primary;
+$dropdown-menu-item-color__focus: $dropdown-menu-item-color__hover;
+$dropdown-menu-item-color__active: $white;
+$dropdown-menu-item-padding-y: 5px;
+$dropdown-menu-item-padding-x: 20px;
+
+$dropdown-toggle-icon-svg-size: 18px;
+$dropdown-toggle-icon-gap: 15px;
+
+// start dropdown-toggle-svg
+.dropdown-toggle-svg {
+    display: inline-flex;
+    align-items: center;
+
+    .svg-icon {
+        width: $dropdown-toggle-icon-svg-size;
+        height: $dropdown-toggle-icon-svg-size;
+        margin-left: $dropdown-toggle-icon-gap;
+    }
+
+}
+// end dropdown-toggle-svg
+
+// start dropdown-menu
+.dropdown-menu {
+    font-size: $dropdown-menu-item-font-size;
+    background-color: $dropdown-menu-background;
+    color: $dropdown-menu-item-color;
+    border: 0;
+    @include border-radius($dropdown-menu-border-radius);
+    box-shadow: $dropdown-menu-shadow;
+
+    .dropdown-item {
+        font-weight: $dropdown-menu-item-font-weight;
+        color: $dropdown-menu-item-color;
+        padding: $dropdown-menu-item-padding-y $dropdown-menu-item-padding-x;
+
+        &:hover {
+            background-color: $dropdown-menu-item-background__hover;
+            color: $dropdown-menu-item-color__hover;
+        }
+
+        &:focus {
+            background-color: $dropdown-menu-item-background__focus;
+            color: $dropdown-menu-item-color__focus;
+        }
+
+        &:active {
+            background-color: $dropdown-menu-item-background__active;
+            color: $dropdown-menu-item-color__active;
+        }
+
+    }
+
+}
+// end dropdown-menu

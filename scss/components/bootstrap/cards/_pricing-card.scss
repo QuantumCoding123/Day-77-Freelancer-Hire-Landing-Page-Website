@@ -1,0 +1,138 @@
+// ------------------
+// # Pricing Card Grid
+// ------------------
+
+// # Pricing Card Grid
+// 
+
+$pricing-card-background: $white;
+$pricing-card-padding: 47px;
+$pricing-card-gap: 40px;
+$pricing-card-border-radius: 20px;
+$pricing-card-shadow: 0px 10px 28px 0px rgba(62, 53, 120, 0.07);
+$pricing-card-shadow__hover: $shadow-1;
+
+$pricing-card-title-font-size: 26px;
+$pricing-card-title-font-weight: $font-weight-bold;
+$pricing-card-title-color: $dark;
+
+$pricing-card-price-font-size: 50px;
+$pricing-card-price-font-weight: $font-weight-semiBold;
+$pricing-card-price-color: $dark;
+
+$pricing-card-price-currency-gap: 10px;
+
+$pricing-card-price-period-font-size: $font-size-base;
+$pricing-card-price-period-font-weight: $font-weight-normal;
+$pricing-card-price-period-color: $dark;
+
+$pricing-card-detail-item-padding-y: 8px;
+
+$pricing-card-detail-icon-color: $primary;
+$pricing-card-detail-icon-size: 20px;
+$pricing-card-detail-icon-gap: 20px;
+
+$pricing-card-detail-text-font-size: 15px;
+$pricing-card-detail-text-font-weight: $font-weight-normal;
+$pricing-card-detail-text-color: $dark;
+
+$pricing-card-btn-font-size: 16px;
+$pricing-card-btn-font-weight: $font-weight-semiBold;
+$pricing-card-btn-background: $magnolia;
+$pricing-card-btn-background__hover: $primary;
+$pricing-card-btn-color: $primary;
+$pricing-card-btn-color__hover: $white;
+$pricing-card-btn-padding-y: 12px;
+$pricing-card-btn-padding-x: 15px;
+$pricing-card-btn-border-radius: 50rem;
+
+// start pricing-card-grid
+.pricing-card {
+    display: grid;
+    background-color: $pricing-card-background;
+    padding: $pricing-card-padding;
+    gap: $pricing-card-gap;
+    border-radius: $pricing-card-border-radius;
+    box-shadow: $pricing-card-shadow;
+    transition: $transition-base;
+
+    &:hover {
+        box-shadow: $pricing-card-shadow__hover;
+    }
+
+    .pricing-title {
+        @include font-size($pricing-card-title-font-size);
+        font-weight: $pricing-card-title-font-weight;
+        color: $pricing-card-title-color;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 0;
+    }
+
+    .pricing-price {
+
+        .pricing-price-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include font-size($pricing-card-price-font-size);
+            font-weight: $pricing-card-price-font-weight;
+            color: $pricing-card-price-color;
+
+            .pricing-price-currency {
+                margin-right: $pricing-card-price-currency-gap;
+            }
+
+        }
+
+        .pricing-price-period {
+            @include font-size($pricing-card-price-period-font-size);
+            font-weight: $pricing-card-price-period-font-weight;
+            color: $pricing-card-price-period-color;
+            text-align: center;
+        }
+
+    }
+
+    .pricing-detail {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+        
+        .pricing-detail-item {
+            display: flex;
+            align-items: center;
+            padding-top: $pricing-card-detail-item-padding-y;
+            padding-bottom: $pricing-card-detail-item-padding-y;
+
+            .pricing-detail-icon {
+                color: $pricing-card-detail-icon-color;
+                margin-right: $pricing-card-detail-icon-gap;
+
+                .svg-icon {
+                    width: $pricing-card-detail-icon-size;
+                    height: $pricing-card-detail-icon-size;
+                }
+
+            }
+
+            .pricing-detail-text {
+                @include font-size($pricing-card-detail-text-font-size);
+                font-weight: $pricing-card-detail-text-font-weight;
+                color: $pricing-card-detail-text-color;
+            }
+
+        }
+
+    }
+
+    .btn {
+
+        &:hover {
+            box-shadow: none;
+        }
+
+    }
+
+}
+// end pricing-card-grid

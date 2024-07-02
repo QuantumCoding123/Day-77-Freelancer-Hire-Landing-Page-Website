@@ -1,0 +1,56 @@
+// ------------------
+// # Social Button Group
+// ------------------
+
+// # Social Button Group
+// 
+
+$social-btn-group-color: #72737C;
+$social-btn-group-background__hover: #3CB5DB;
+$social-btn-group-color__hover: $white;
+$social-btn-group-size: 55px;
+$social-btn-group-size-sm: 45px;
+$social-btn-group-border-radius: 50rem;
+$social-btn-group-icon-size: 18px;
+
+// start social-button-group
+.social-btn-group {
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+
+    .social-item {
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: $social-btn-group-color;
+            width: $social-btn-group-size-sm;
+            height: $social-btn-group-size-sm;
+            border-radius: $social-btn-group-border-radius;
+            transition: color $transition-base, background-color $transition-base, border-color $transition-base;
+
+            @include media-breakpoint-up(md) {
+                width: $social-btn-group-size;
+                height: $social-btn-group-size;
+            }
+
+            &:hover {
+                background-color: $social-btn-group-background__hover;
+                color: $social-btn-group-color__hover;
+            }
+
+            .svg-icon {
+                width: $social-btn-group-icon-size;
+                height: $social-btn-group-icon-size;
+            }
+
+        }
+
+    }
+
+}
+// end social-button-group

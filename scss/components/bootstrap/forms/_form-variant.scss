@@ -1,0 +1,37 @@
+// ------------------
+// # Form with Button Inner
+// ------------------
+
+// # Form with Button Inner
+// 
+
+$form-btn-inner-background: $white;
+$form-btn-inner-padding: 7px;
+
+$form-btn-inner-input-padding-y: 0;
+$form-btn-inner-input-padding-x: 20px;
+
+// start form-with-button-inner
+.form-btn-inner {
+    display: flex;
+    background-color: $form-btn-inner-background;
+    padding: $form-btn-inner-padding;
+
+    .form-control {
+        background-color: transparent;
+        padding: $form-btn-inner-input-padding-y $form-btn-inner-input-padding-x;
+        border: 0;
+        border-radius: inherit;
+
+        &:focus {
+            box-shadow: none;
+        }
+
+    }
+
+    .btn {
+        border-radius: inherit;
+    }
+
+}
+// end form-with-button-inner

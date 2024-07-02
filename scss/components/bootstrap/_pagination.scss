@@ -1,0 +1,145 @@
+// ------------------
+// # Pagination Base
+// # Pagination Slider Line
+// ------------------
+
+// # Pagination Base
+// 
+
+$pagination-container-gap: 15px;
+
+$pagination-border-radius: 50rem;
+
+$pagination-page-link-font-size: $font-size-base;
+$pagination-page-link-font-weight: $font-weight-medium;
+$pagination-page-link-background__active: $primary;
+$pagination-page-link-color: $primary;
+$pagination-page-link-color__active: #FDFDFD;
+$pagination-page-link-padding-y: 12px;
+$pagination-page-link-padding-y__active: 12px;
+$pagination-page-link-padding-x: 20px;
+$pagination-page-link-padding-x__active: 24px;
+$pagination-page-link-border-radius: 50rem;
+
+$pagination-next-previous-icon-size: 15px;
+$pagination-next-previous-icon-gap: 10px;
+
+// start pagination-base
+.pagination-container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $pagination-container-gap;
+
+    @include media-breakpoint-up(md) {
+        flex-direction: row;
+    }
+
+    .pagination {
+        display: flex;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+        border-radius: $pagination-border-radius
+    }
+
+    .page-link {
+        display: inline-flex;
+        align-items: center;
+        @include font-size($pagination-page-link-font-size);
+        font-weight: $pagination-page-link-font-weight;
+        color: $pagination-page-link-color;
+        padding: $pagination-page-link-padding-y $pagination-page-link-padding-x;
+        text-decoration: none;
+        border: 0;
+        border-radius: $pagination-page-link-border-radius!important;
+
+        &:focus {
+            box-shadow: none;
+        }
+
+    }
+
+    .page-link {
+
+        &.previous,
+        &.next {
+
+            svg {
+                width: $pagination-next-previous-icon-size;
+                height: $pagination-next-previous-icon-size;
+            }
+
+        }
+
+        &.previous {
+
+            svg {
+                margin-right: $pagination-next-previous-icon-gap;
+            }
+
+        }
+
+        &.next {
+
+            svg {
+                margin-left: $pagination-next-previous-icon-gap;
+            }
+
+        }
+
+    }
+
+    .page-item.active {
+
+        .page-link {
+            background-color: $pagination-page-link-background__active;
+            color: $pagination-page-link-color__active;
+            padding: $pagination-page-link-padding-y__active $pagination-page-link-padding-x__active;
+        }
+
+    }
+
+}
+// end pagination-base
+
+// # Pagination Slider Line
+// 
+
+$pagination-slider-line-background: #DADADA;
+$pagination-slider-line-background__active: $primary;
+$pagination-slider-line-width: 40px;
+$pagination-slider-line-width__active: 100px;
+$pagination-slider-line-height: 5px;
+$pagination-slider-line-gap: 5px;
+
+// start pagination-slider-line
+.pagination-slider {
+
+    &.pagination-line {
+        display: inline-flex;
+        align-items: center;
+        margin-left: -$pagination-slider-line-gap;
+        margin-right: -$pagination-slider-line-gap;
+        width: auto;
+
+        .swiper-pagination-bullet {
+            background-color: $pagination-slider-line-background;
+            width: $pagination-slider-line-width;
+            height: $pagination-slider-line-height;
+            margin-left: $pagination-slider-line-gap;
+            margin-right: $pagination-slider-line-gap;
+            border-radius: 0;
+            transition: $transition-base;
+
+            &-active {
+                background-color: $pagination-slider-line-background__active;
+                width: $pagination-slider-line-width__active;
+            }
+
+        }
+
+    }
+
+}
+// end pagination-slider-line

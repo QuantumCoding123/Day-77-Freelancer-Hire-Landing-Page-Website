@@ -1,0 +1,111 @@
+// ------------------
+// # Avatar Rounded
+// # Avatar Group
+// ------------------
+
+// # Avatar Rounded
+// 
+
+$avatar-rounded-border-radius: 50rem;
+$avatar-rounded-size: 100px;
+
+$avatar-rounded-sec-background: $white;
+$avatar-rounded-sec-size: 1.4;
+
+$avatar-rounded-line-size: 1.7;
+$avatar-rounded-line-border-width: 1px;
+$avatar-rounded-line-border-color: #8F98BF;
+$avatar-rounded-line-opacity: .28;
+
+// start avatar-rounded
+.avatar-rounded {
+    position: relative;
+    display: inline-flex;
+    border-radius: $avatar-rounded-border-radius;
+
+    img {
+        width: $avatar-rounded-size;
+        height: $avatar-rounded-size;
+        object-fit: cover;
+        object-position: center;
+        border-radius: inherit;
+        z-index: 5;
+    }
+
+    &::before {
+        position: absolute;
+        display: block;
+        content: '';
+        background-color: $avatar-rounded-sec-background;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transform: scale($avatar-rounded-sec-size);
+        border-radius: inherit;
+    }
+
+    &::after {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transform: scale($avatar-rounded-line-size);
+        border: $avatar-rounded-line-border-width solid $avatar-rounded-line-border-color;
+        opacity: $avatar-rounded-line-opacity;
+        border-radius: inherit;
+    }
+
+}
+// end avatar-rounded
+
+// # Avatar Group
+// 
+
+$avatar-group-size: 57px;
+$avatar-group-gap: -15px;
+$avatar-group-border-radius: 50rem;
+$avatar-group-border-size: 3px;
+$avatar-group-border-color: $white;
+
+$avatar-group-text-font-size: 15px;
+$avatar-group-text-font-weight: $font-weight-semiBold;
+
+// start avatar-group
+.avatar-group {
+    display: flex;
+
+    .avatar {
+        width: $avatar-group-size;
+        height: $avatar-group-size;
+        overflow: hidden;
+        border-radius: $avatar-group-border-radius;
+        border: $avatar-group-border-size solid $avatar-group-border-color;
+
+        &:not(:first-child) {
+            margin-left: $avatar-group-gap;
+        }
+
+        &-text {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            @include font-size($avatar-group-text-font-size);
+            font-weight: $avatar-group-text-font-weight;
+            text-decoration: none;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-position: center;
+            object-fit: cover;
+        }
+
+    }
+
+}
+// end avatar-group

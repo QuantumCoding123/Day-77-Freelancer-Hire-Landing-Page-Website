@@ -1,0 +1,132 @@
+@use "bootstrap" as *;
+
+// ------------------
+// # Navbar
+// ------------------
+
+// # Navbar
+// 
+
+$navbar-padding-y-xl: 24px;
+
+$navbar-brand-width: 120px;
+$navbar-brand-padding-y: 20px;
+
+$navbar-toggler-gap: 20px;
+$navbar-toggler-size: 20px;
+
+$navbar-nav-gap-xl: 41px;
+$navbar-nav-font-size: $font-size-base;
+$navbar-nav-font-weight: $font-weight-normal;
+$navbar-nav-font-weight__active: $font-weight-medium;
+$navbar-nav-color: $dark;
+$navbar-nav-color__hover: $primary;
+$navbar-nav-color__active: $navbar-nav-color__hover;
+$navbar-nav-padding-y: 8px;
+$navbar-nav-padding-x: 0;
+$navbar-nav-padding-y-xl: 12px;
+$navbar-nav-padding-x-xl: $navbar-nav-padding-x;
+
+$navbar-nav-hover-line-background: $navbar-nav-color__hover;
+$navbar-nav-hover-line-height: 2px;
+
+// start navbar
+.navbar {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    @include media-breakpoint-up(xl) {
+        padding-top: $navbar-padding-y-xl;
+        padding-bottom: $navbar-padding-y-xl;
+    }
+
+    .navbar-brand {
+        padding-top: $navbar-brand-padding-y;
+        padding-bottom: $navbar-brand-padding-y;
+        margin-right: 0;
+
+        @include media-breakpoint-up(xl) {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        img {
+            max-width: $navbar-brand-width;
+        }
+    }
+
+    .navbar-toggler {
+        padding: 0;
+
+        @include media-breakpoint-up(md) {
+            margin-left: $navbar-toggler-gap;
+        }
+
+        .svg-icon {
+            width: $navbar-toggler-size;
+            height: $navbar-toggler-size;
+        }
+
+    }
+
+    .navbar-nav {
+        .nav-item {
+
+            @include media-breakpoint-up(xl) {
+                &:not(:first-child) {
+                    margin-left: $navbar-nav-gap-xl;
+                }
+            }
+
+            .nav-link {
+                position: relative;
+                font-size: $navbar-nav-font-size;
+                font-weight: $navbar-nav-font-weight;
+                color: $navbar-nav-color;
+                padding: $navbar-nav-padding-y $navbar-nav-padding-x;
+
+                @include media-breakpoint-up(xl) {
+                    padding: $navbar-nav-padding-y-xl $navbar-nav-padding-x-xl;
+                }
+
+                &.active {
+                    font-weight: $navbar-nav-font-weight__active;
+                }
+
+                &:hover {
+                    color: $navbar-nav-color__hover;
+                }
+
+                @include media-breakpoint-up(xl) {
+                    &.active {
+                        color: $navbar-nav-color__active;
+                    }
+
+                    &:after {
+                        position: absolute;
+                        content: '';
+                        background-color: $navbar-nav-hover-line-background;
+                        width: 100%;
+                        height: $navbar-nav-hover-line-height;
+                        bottom: 0;
+                        left: 0;
+                        transform: scaleX(0);   
+                        transform-origin: bottom right;
+                        transition: transform $transition-base;
+                    }
+
+                    &.active:after,
+                    &:hover:after {
+                        transform: scaleX(1);
+                        transform-origin: bottom left;
+                    }
+                }
+
+            }
+
+        }  
+
+    }
+
+}
+// end navbar

@@ -1,0 +1,11 @@
+@import "../../../vendors/bootstrap/scss/root";
+
+:root{
+
+    // start color-rgb root-classes
+    @each $color, $value in $colors-rgb {
+        --#{$variable-prefix}#{$color}-rgb: #{$value};
+    }
+    // end color-rgb root-classes
+
+}

@@ -1,0 +1,200 @@
+// ------------------
+// # Form Search
+// # Form Search Filter
+// ------------------
+
+// # Form Search
+// 
+
+$form-search-background: $white;
+$form-search-width: 310px;
+$font-search-padding-y: 13px;
+$font-search-padding-x: 25px;
+$font-search-padding-border-radius: 50rem;
+
+$form-search-input-font-size: $font-size-base;
+$form-search-input-font-weight: $font-weight-normal;
+$form-search-input-placeholder: $gray;
+$form-search-input-shadow__hover: $shadow-2;
+
+$form-search-icon-color: #646464;
+$form-search-icon-svg: url("data:image/svg+xml,<svg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'><path d='M15.7639 14.6305L13.505 12.3796C14.7296 10.8668 15.327 8.94171 15.174 7.0014C15.021 5.06109 14.1293 3.25347 12.6827 1.95126C11.2362 0.649061 9.34511 -0.0484305 7.39944 0.00261663C5.45378 0.0536637 3.60188 0.849357 2.22562 2.22562C0.849357 3.60188 0.0536637 5.45378 0.00261663 7.39944C-0.0484305 9.34511 0.649061 11.2362 1.95126 12.6827C3.25347 14.1293 5.06109 15.021 7.0014 15.174C8.94171 15.327 10.8668 14.7296 12.3796 13.505L14.6305 15.7639C14.7047 15.8387 14.793 15.8981 14.8902 15.9386C14.9875 15.9791 15.0918 16 15.1972 16C15.3026 16 15.4069 15.9791 15.5041 15.9386C15.6014 15.8981 15.6897 15.8387 15.7639 15.7639C15.8387 15.6897 15.8981 15.6014 15.9386 15.5041C15.9791 15.4069 16 15.3026 16 15.1972C16 15.0918 15.9791 14.9875 15.9386 14.8902C15.8981 14.793 15.8387 14.7047 15.7639 14.6305V14.6305ZM1.62801 7.61441C1.62801 6.43042 1.97911 5.27301 2.6369 4.28855C3.2947 3.30409 4.22965 2.5368 5.32352 2.0837C6.41739 1.63061 7.62105 1.51205 8.7823 1.74304C9.94355 1.97403 11.0102 2.54418 11.8474 3.38139C12.6846 4.2186 13.2548 5.28528 13.4858 6.44652C13.7168 7.60777 13.5982 8.81144 13.1451 9.90531C12.692 10.9992 11.9247 11.9341 10.9403 12.5919C9.95582 13.2497 8.79841 13.6008 7.61441 13.6008C6.02672 13.6008 4.50406 12.9701 3.38139 11.8474C2.25872 10.7248 1.62801 9.20211 1.62801 7.61441V7.61441Z' fill='#{$form-search-icon-color}'/></svg>");
+$form-search-icon-size: 18px;
+$form-search-icon-gap: 25px;
+
+// start form-search
+.form-search {
+    position: relative;
+    display: flex;
+
+    @include media-breakpoint-up(xl) {
+        min-width: $form-search-width;
+    }
+
+    .form-control {
+        background-color: $form-search-background;
+        background-image: escape-svg($form-search-icon-svg);
+        background-repeat: no-repeat;
+        background-position: left calc(100% - #{$form-search-icon-gap}) center;
+        background-size: $form-search-icon-size;
+        @include font-size($form-search-input-font-size);
+        font-weight: $form-search-input-font-weight;
+        color: $dark;
+        padding: $font-search-padding-y $font-search-padding-x;
+        padding-right: $font-search-padding-x + $form-search-icon-gap;
+        border: 0;
+        border-radius: $font-search-padding-border-radius;
+        transition: $transition-base;
+
+        &::placeholder {
+            color: $form-search-input-placeholder;
+        }
+
+        &:focus {
+            box-shadow: $form-search-input-shadow__hover;
+        }
+
+    }
+
+}
+// end form-search
+
+// # Form Search Filter
+// 
+
+$form-search-filter-background-md: $white;
+$form-search-filter-padding-y-md: 7px;
+$form-search-filter-padding-x-md: 7px;
+$form-search-filter-border-radius-md: 50rem;
+$form-search-filter-shadow-md: 0px 19px 84px 0px rgba(62, 53, 120, 0.05);
+
+$form-search-filter-input-container-background: $white;
+$form-search-filter-input-container-padding-y: 7px;
+$form-search-filter-input-container-padding-x: 7px;
+$form-search-filter-input-container-border-radius: 50rem;
+
+$form-search-filter-input-placeholder-color: $gray;
+$form-search-filter-input-padding-y: 0;
+$form-search-filter-input-padding-x: 15px;
+$form-search-filter-input-padding-y-md: 0;
+$form-search-filter-input-padding-x-md: 20px;
+
+$form-search-filter-input-btn-icon-color: $white;
+$form-search-filter-input-btn-icon: url("data:image/svg+xml,<svg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'><path d='M15.7639 14.6305L13.505 12.3796C14.7296 10.8668 15.327 8.94171 15.174 7.0014C15.021 5.06109 14.1293 3.25347 12.6827 1.95126C11.2362 0.649061 9.34511 -0.0484305 7.39944 0.00261663C5.45378 0.0536637 3.60188 0.849357 2.22562 2.22562C0.849357 3.60188 0.0536637 5.45378 0.00261663 7.39944C-0.0484305 9.34511 0.649061 11.2362 1.95126 12.6827C3.25347 14.1293 5.06109 15.021 7.0014 15.174C8.94171 15.327 10.8668 14.7296 12.3796 13.505L14.6305 15.7639C14.7047 15.8387 14.793 15.8981 14.8902 15.9386C14.9875 15.9791 15.0918 16 15.1972 16C15.3026 16 15.4069 15.9791 15.5041 15.9386C15.6014 15.8981 15.6897 15.8387 15.7639 15.7639C15.8387 15.6897 15.8981 15.6014 15.9386 15.5041C15.9791 15.4069 16 15.3026 16 15.1972C16 15.0918 15.9791 14.9875 15.9386 14.8902C15.8981 14.793 15.8387 14.7047 15.7639 14.6305V14.6305ZM1.62801 7.61441C1.62801 6.43042 1.97911 5.27301 2.6369 4.28855C3.2947 3.30409 4.22965 2.5368 5.32352 2.0837C6.41739 1.63061 7.62105 1.51205 8.7823 1.74304C9.94355 1.97403 11.0102 2.54418 11.8474 3.38139C12.6846 4.2186 13.2548 5.28528 13.4858 6.44652C13.7168 7.60777 13.5982 8.81144 13.1451 9.90531C12.692 10.9992 11.9247 11.9341 10.9403 12.5919C9.95582 13.2497 8.79841 13.6008 7.61441 13.6008C6.02672 13.6008 4.50406 12.9701 3.38139 11.8474C2.25872 10.7248 1.62801 9.20211 1.62801 7.61441V7.61441Z' fill='#{$form-search-filter-input-btn-icon-color}'/></svg>");
+$form-search-filter-input-btn-icon-size: 16px;
+$form-search-filter-input-btn-icon-gap: 10px;
+
+$form-search-filter-input-btn-font-size: $font-size-base;
+$form-search-filter-input-btn-font-weight: $font-weight-semiBold;
+$form-search-filter-input-btn-padding-y: 12px;
+$form-search-filter-input-btn-padding-x: 30px;
+$form-search-filter-input-btn-border-radius: 50rem;
+
+$form-search-filter-select-arrow-icon-color: #D2D2D2;
+$form-search-filter-select-arrow-icon: url("data:image/svg+xml,<svg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'><path d='M15.7018 5.42303L8.50182 11.823C8.35583 11.9513 8.16815 12.022 7.97382 12.022C7.7795 12.022 7.59181 11.9513 7.44582 11.823L0.245822 5.42303C0.0971563 5.28024 0.0093474 5.08557 0.000704197 4.87962C-0.007939 4.67366 0.0632507 4.47232 0.19943 4.31757C0.335609 4.16282 0.526266 4.06661 0.731648 4.049C0.93703 4.03139 1.14128 4.09373 1.30182 4.22304L7.97382 10.151L14.6458 4.22304C14.7237 4.14823 14.8159 4.08996 14.9169 4.05175C15.0179 4.01354 15.1256 3.99618 15.2335 4.0007C15.3414 4.00523 15.4473 4.03156 15.5448 4.0781C15.6422 4.12464 15.7292 4.19043 15.8006 4.2715C15.8719 4.35257 15.9261 4.44725 15.9599 4.54982C15.9936 4.6524 16.0063 4.76075 15.9971 4.86835C15.9878 4.97595 15.9569 5.08057 15.9062 5.17589C15.8554 5.27122 15.7859 5.35529 15.7018 5.42303Z' fill='#{$form-search-filter-select-arrow-icon-color}'/></svg>");
+$form-search-filter-select-arrow-icon-size: 20px;
+
+$form-search-filter-select-color: $dark;
+$form-search-filter-select-padding-y: 15px;
+$form-search-filter-select-padding-x: 20px;
+$form-search-filter-select-border-width: 1px;
+$form-search-filter-select-border-color: $bright-gray;
+$form-search-filter-select-border-radius: 50rem;
+
+$form-search-filter-select-icon-color: $mojorelle-blue;
+$form-search-filter-select-icon-gap: 10px;
+
+$form-search-filter-select-icon-mark: url("data:image/svg+xml,<svg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'><path d='M8.125 0C4.74766 0 2 2.74766 2 6.125C2 7.20606 2.28562 8.26891 2.82597 9.19859C2.95194 9.41534 3.09275 9.62656 3.24456 9.82641L7.85887 16H8.39109L13.0054 9.82644C13.1572 9.62656 13.298 9.41537 13.424 9.19862C13.9644 8.26891 14.25 7.20606 14.25 6.125C14.25 2.74766 11.5023 0 8.125 0ZM8.125 8.15625C7.00497 8.15625 6.09375 7.24503 6.09375 6.125C6.09375 5.00497 7.00497 4.09375 8.125 4.09375C9.24503 4.09375 10.1562 5.00497 10.1562 6.125C10.1562 7.24503 9.24503 8.15625 8.125 8.15625Z' fill='#{$form-search-filter-select-icon-color}'/></svg>");
+
+// start form-search-filter
+.form-search-filter {
+    display: grid;
+
+    @include media-breakpoint-up(md) {
+        display: flex;
+        background-color: $form-search-filter-background-md;
+        padding: $form-search-filter-padding-y-md $form-search-filter-padding-y-md;
+        border-radius: $form-search-filter-border-radius-md;
+        box-shadow: $form-search-filter-shadow-md;
+        overflow: hidden;
+    }
+
+    .form-search-input {
+        display: flex;
+
+        @include media-breakpoint-down(md) {
+            background-color: $form-search-filter-input-container-background;
+            padding: $form-search-filter-input-container-padding-y $form-search-filter-input-container-padding-x;
+            border-radius: $form-search-filter-input-container-border-radius;
+        }
+
+        .form-control {
+            background-color: transparent;
+            padding: $form-search-filter-input-padding-y $form-search-filter-input-padding-x;
+            border: none;
+            box-shadow: none;
+
+            @include media-breakpoint-up(md) {
+                padding: $form-search-filter-input-padding-y-md $form-search-filter-input-padding-x-md;
+            }
+
+            &::placeholder {
+                color: $form-search-filter-input-placeholder-color;
+            }
+
+        }
+
+        .btn {
+            background-image: escape-svg($form-search-filter-input-btn-icon);
+            background-repeat: no-repeat;
+            background-position: left calc(100% - #{$form-search-filter-input-btn-padding-x}) center;
+            background-size: $form-search-filter-input-btn-icon-size;
+            font-size: $form-search-filter-input-btn-font-size;
+            font-weight: $form-search-filter-input-btn-font-weight;
+            padding: $form-search-filter-input-btn-padding-y $form-search-filter-input-btn-padding-x;
+            padding-right: $form-search-filter-input-btn-padding-x + $form-search-filter-input-btn-icon-size + $form-search-filter-input-btn-icon-gap;
+            border-radius: $form-search-filter-input-btn-border-radius;
+        }
+
+    }
+
+    .form-select {
+        background-image: escape-svg($form-search-filter-select-arrow-icon);
+        background-repeat: no-repeat;
+        background-position: left calc(100% - #{$form-search-filter-select-padding-x}) center;
+        background-size: $form-search-filter-select-arrow-icon-size;
+        color: $form-search-filter-select-color;
+        padding: $form-search-filter-select-padding-y $form-search-filter-select-padding-x;
+        border: none;
+        box-shadow: none;
+        flex: 1 1 auto;
+
+        @include media-breakpoint-down(md) {
+            border-radius: $form-search-filter-select-border-radius;
+        }
+
+        @include media-breakpoint-up(md) {
+            border-right: $form-search-filter-select-border-width solid $form-search-filter-select-border-color;
+            border-radius: 0;
+        }
+
+        &.select-icon {
+            background-repeat: no-repeat no-repeat;
+            background-position: right calc(100% - #{$form-search-filter-select-padding-x}) center, left calc(100% - #{$form-search-filter-select-padding-x}) center;
+            padding-left: $form-search-filter-select-padding-x + $form-search-filter-select-padding-x + $form-search-filter-select-icon-gap;
+        }
+
+    }
+
+    // # Form select Icon
+
+    .form-select {
+
+        &.icon-mark {
+            background-image: escape-svg($form-search-filter-select-icon-mark), escape-svg($form-search-filter-select-arrow-icon);
+        }
+
+    }
+
+}
+// end form-search-filter

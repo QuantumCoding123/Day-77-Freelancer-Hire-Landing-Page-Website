@@ -1,0 +1,156 @@
+@import "../../../vendors/bootstrap/scss/buttons";
+
+// ------------------
+// # Button Base
+// # Button Variants
+// # Button Color Variants 
+// # Button Color Classes
+// ------------------
+
+// # Button Base
+// 
+
+// start btn-base
+.btn {
+    transition: color $transition-base, background-color $transition-base, border-color $transition-base, box-shadow $transition-base, -webkit-box-shadow $transition-base;
+
+    &:hover {
+        box-shadow: $shadow-1;
+    }
+
+    .btn-check:focus + &,
+    &:focus {
+        box-shadow: none;
+    }
+
+    .btn-check:checked + &,
+    .btn-check:active + &,
+    &:active,
+    &.active {
+        box-shadow: none;
+
+        &:focus {
+        box-shadow: none;
+        }
+
+    }
+
+    &:disabled,
+    &.disabled,
+    fieldset:disabled & {
+        box-shadow: none;
+    }
+
+}
+// end btn-base
+
+// # Button Variants
+// 
+
+// - Btn Rounded
+
+$btn-rounded-padding: 14px;
+$btn-rounded-border-radius: 50rem;
+
+$btn-rounded-icon-size: 20px;
+
+// start btn-rounded
+.btn-rounded {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: $btn-rounded-padding;
+    border-radius: $btn-rounded-border-radius;
+
+    .svg-icon {
+        width: $btn-rounded-icon-size;
+        height: $btn-rounded-icon-size;
+    }
+
+}
+// end btn-rounded
+
+// # Button Color Variants
+// 
+
+// - Btn Book
+$btn-book-background: $orange-red;
+$btn-book-background__hover: $pale-pink;
+$btn-book-color: $white;
+$btn-book-color__hover: $btn-book-background;
+
+$btn-book-booked-background: $white;
+$btn-book-booked-color: $btn-book-background;
+$btn-book-booked-border-color: $platinum;
+
+// start btn-book
+.btn-book {
+    background-color: $btn-book-background;
+    color: $btn-book-color;
+
+    &.booked {
+        background-color: $btn-book-booked-background;
+        color: $btn-book-booked-color;
+        border-color: $btn-book-booked-border-color;
+    }
+
+    &:hover,
+    &.booked:hover {
+        background-color: $btn-book-background__hover;
+        color: $btn-book-color__hover;
+        border-color: transparent;
+    }
+
+}
+// end btn-book
+
+// - Btn Apply
+$btn-apply-background: $alice-blue;
+$btn-apply-background__hover: $primary;
+$btn-apply-color: $primary;
+$btn-apply-color__hover: $white;
+
+// start btn-apply
+.btn-apply {
+    background-color: $btn-apply-background;
+    color: $btn-apply-color;
+
+    &:hover {
+        background-color: $btn-apply-background__hover;
+        color: $btn-apply-color__hover;
+    }
+
+}
+// end btn-apply
+
+// - Btn Search Suggestion
+$btn-search-suggestion-color: $dark;
+$btn-search-suggestion-color__hover: $primary;
+$btn-search-suggestion-border-color: $lavender-web;
+$btn-search-suggestion-border-color__hover: $btn-search-suggestion-color__hover;
+
+$btn-search-suggestion-border: 1px solid $btn-search-suggestion-border-color;
+
+// start btn-search-suggestion
+.btn-suggestion {
+    color: $dark;
+    border: $btn-search-suggestion-border;
+
+    &:hover {
+        color: $btn-search-suggestion-color__hover;
+        border-color: $btn-search-suggestion-border-color__hover;
+    }
+
+}
+// end btn-search-suggestion
+
+// # Button Color Classes
+// 
+
+// start btn-colors
+@each $color, $value in $colors {
+    .btn-#{$color} {
+        @include button-variant($value, $value);
+    }
+}
+// end btn-colors

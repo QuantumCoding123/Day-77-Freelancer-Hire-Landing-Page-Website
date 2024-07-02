@@ -1,0 +1,44 @@
+// ------------------
+// # Header Section
+// ------------------
+
+body.page__joblist {
+
+    .main {
+
+        // # Header Section
+
+        // start header-heading
+        @include media-breakpoint-between(lg, xxl) {
+            .heading-header-1 {
+                font-size: calc(1.5rem + 1.5vw);
+            }
+        }
+        // end header-heading
+
+        // start hero-image
+        .hero-image-img {
+            width: 100%;
+            height: auto;
+
+            @include media-breakpoint-up(lg) {
+                position: absolute;
+                width: 35rem;
+                bottom: 0;
+                right: 0;
+            }
+
+            @include media-breakpoint-up(xl) {
+                width: 40rem;
+            }
+
+            @include media-breakpoint-up(xxl) {
+                width: 50rem;
+            }
+
+        }
+        // end hero-image
+
+    }
+
+}

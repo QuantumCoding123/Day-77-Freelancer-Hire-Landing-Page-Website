@@ -1,0 +1,36 @@
+// ------------------
+// # Job Detail Header Background
+// ------------------
+
+// # Job Detail Header Background
+// 
+
+// start job-detail-header-background
+.detail-header-background {
+    position: absolute;
+    background-color: $primary;
+    width: 100%;
+    height: 200px;
+    max-height: 350px;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+
+    @include media-breakpoint-up(md) {
+        height: 230px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        height: 330px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+}
+// end job-detail-header-background

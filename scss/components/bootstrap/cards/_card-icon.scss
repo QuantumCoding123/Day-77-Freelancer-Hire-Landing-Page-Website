@@ -1,0 +1,74 @@
+// ------------------
+// # Card Icon
+// ------------------
+
+// # Card Icon
+// 
+
+$card-icon-padding: 40px;
+$card-icon-border-radius: 30px;
+$card-icon-shadow: $shadow-2;
+$card-icon-shadow__hover: $shadow-1;
+
+$card-icon-box-size: 81px;
+$card-icon-box-border-radius: 20px;
+$card-icon-box-icon-size: 41px;
+
+$card-icon-title-font-size: 30px;
+$card-icon-title-font-weight: $font-weight-semiBold;
+$card-icon-title-color: $dark;
+$card-icon-title-gap: 22px;
+
+$card-icon-text-font-size: 14px;
+$card-icon-text-font-weight: $font-weight-normal;
+$card-icon-text-color: $dark;
+$card-icon-text-gap: 22px;
+
+// start card-icon
+.card {
+
+    &.card-icon {
+        padding: $card-icon-padding;
+        border: 0;
+        border-radius: $card-icon-border-radius;
+        box-shadow: $card-icon-shadow;
+        transition: $transition-base;
+
+        &:hover {
+            box-shadow: $card-icon-shadow__hover;
+        }
+
+        .card-box-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: $card-icon-box-size;
+            height: $card-icon-box-size;
+            border-radius: $card-icon-box-border-radius;
+
+            .svg-icon {
+                width: $card-icon-box-icon-size;
+                height: $card-icon-box-icon-size;
+            }
+
+        }
+
+        .card-title {
+            @include font-size($card-icon-title-font-size);
+            font-weight: $card-icon-title-font-weight;
+            color: $card-icon-title-color;
+            margin-top: $card-icon-title-gap;
+            margin-bottom: 0;
+        }
+
+        .card-text {
+            @include font-size($card-icon-text-font-size);
+            font-weight: $card-icon-text-font-weight;
+            color: $card-icon-text-color;
+            margin-top: $card-icon-text-gap;
+        }
+
+    }
+
+}
+// end card-icon

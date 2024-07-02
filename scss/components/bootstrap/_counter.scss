@@ -1,0 +1,133 @@
+// ------------------
+// # Counter
+// ------------------
+
+// # Counter
+// 
+
+$counter-background: $primary;
+$counter-padding: 80px;
+$counter-padding-xs: 80px;
+$counter-gap: 60px;
+$counter-border-radius: 20px;
+
+$counter-item-gap: 15px;
+$counter-item-gap-xs: 5px;
+
+$counter-item-number-font-size: 50px;
+$counter-item-number-font-weight: $font-weight-semiBold;
+$counter-item-number-color: $white;
+
+$counter-item-title-font-size: 16px;
+$counter-item-title-font-weight: $font-weight-normal;
+$counter-item-title-color: $white;
+
+// start counter
+.counter {
+    position: relative;
+    display: grid;
+    background-color: $counter-background;
+    gap: $counter-gap;
+    overflow: hidden;
+    padding: $counter-padding-xs;
+    border-radius: $counter-border-radius;
+
+    @include media-breakpoint-up(md) {
+        grid-template-columns: auto auto;
+    }
+
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: auto auto auto auto;
+        gap: 0 $counter-gap;
+        padding: $counter-padding;
+    }
+
+    .count-item {
+        display: grid;
+        gap: $counter-item-gap-xs;
+        text-align: center;
+        z-index: 5;
+
+        @include media-breakpoint-up(lg) {
+            gap: $counter-item-gap;
+        }
+
+        .count-number {
+            @include font-size($counter-item-number-font-size);
+            font-weight: $counter-item-number-font-weight;
+            color: $counter-item-number-color;
+        }
+
+        .count-title {
+            @include font-size($counter-item-title-font-size);
+            font-weight: $counter-item-title-font-weight;
+            color: $counter-item-title-color;
+        }
+
+    }
+
+    figure {
+        margin: 0;
+
+        .figure {
+            position: absolute;
+
+            &-1 {
+                width: 286px;
+                height: 286px;
+                top: -10rem;
+                left: -10rem;
+            }
+
+            &-2 {
+                width: 60px;
+                height: 60px;
+                top: 3.7rem;
+                left: 6.5rem;
+            }
+
+            &-3 {
+                width: 300px;
+                height: 300px;
+                top: 14rem;
+                left: 10rem;
+
+                @include media-breakpoint-between(xs, lg) {
+                    top: 22rem;
+                    left: 4rem;
+                }
+
+            }
+
+            &-4 {
+                width: 40px;
+                height: 40px;
+                top: 14rem;
+                left: 25rem;
+            }
+
+            &-5 {
+                width: 265px;
+                height: 265px;
+                top: -9rem;
+                right: 1rem;
+
+                @include media-breakpoint-between(xs, lg) {
+                    right: -11rem;
+                }
+
+            }
+
+            &-6 {
+                width: 77px;
+                height: 77px;
+                bottom: 2.5rem;
+                right: 1rem;
+            }
+
+        }
+
+    }
+
+}
+// end counter

@@ -1,0 +1,196 @@
+// ------------------
+// # Header Background
+// ------------------
+
+body.page__freelancerlist {
+
+    .main {
+
+        // # Header Background
+        // 
+
+        // start header-background
+        .header-background {
+            position: absolute;
+            background-color: $ghost-white ;
+            width: 100%;
+            height: 60rem;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            @include media-breakpoint-up(md) {
+                height: 52rem;
+            }
+
+            @include media-breakpoint-up(lg) {
+                height: 56rem;
+            }
+
+            @include media-breakpoint-up(xl) {
+                height: 58rem;
+            }
+
+        }
+        // end header-background
+
+        // start header-figure
+        .header-background {
+
+            .figure-avatar-1 {
+                bottom: calc(100% - 12%);
+                right: calc(100% - 7%);
+
+                .avatar-rounded {
+
+                    img {
+                        width: 60px;
+                        height: 60px;
+
+                        @include media-breakpoint-up(xxl) {
+                            width: 70px;
+                            height: 70px;
+                        }
+
+                    }
+
+                }
+
+            }
+
+            .figure-avatar-2 {
+                bottom: calc(100% - 30%);
+                right: calc(100% - 28%);
+
+                @include media-breakpoint-up(xl) {
+                    bottom: calc(100% - 21%);
+                    right: calc(100% - 28%);
+                }
+
+                .avatar-rounded {
+
+                    img {
+                        width: 90px;
+                        height: 90px;
+
+                        @include media-breakpoint-up(xxl) {
+                            width: 100px;
+                            height: 100px;
+                        }
+
+                    }
+
+                }
+
+            }
+
+            .figure-avatar-3 {
+                bottom: calc(100% - 60%);
+                right: calc(100% - 5%);
+
+                @include media-breakpoint-up(xl) {
+                    bottom: calc(100% - 40%);
+                    right: calc(100% - 15%);
+                }
+
+                .avatar-rounded {
+
+                    img {
+                        width: 70px;
+                        height: 70px;
+
+                        @include media-breakpoint-up(xxl) {
+                            width: 80px;
+                            height: 80px;
+                        }
+
+                    }
+
+                }
+
+            }
+
+            .figure-avatar-4 {
+                bottom: calc(100% - 20%);
+                left: calc(100% - 3%);
+
+                @include media-breakpoint-up(xl) {
+                    bottom: calc(100% - 15%);
+                    left: calc(100% - 9%);
+                }
+
+                .avatar-rounded {
+
+                    img {
+                        width: 65px;
+                        height: 65px;
+
+                        @include media-breakpoint-up(xxl) {
+                            width: 75px;
+                            height: 75px;
+                        }
+
+                    }
+
+                }
+
+            }
+
+            .figure-avatar-5 {
+                bottom: calc(100% - 45%);
+                left: calc(100% - 25%);
+
+                @include media-breakpoint-up(xl) {
+                    bottom: calc(100% - 25%);
+                    left: calc(100% - 28%);
+                }
+
+                .avatar-rounded {
+
+                    img {
+                        width: 87px;
+                        height: 87px;
+
+                        @include media-breakpoint-up(xxl) {
+                            width: 97px;
+                            height: 97px;
+                        }
+
+                    }
+
+                }
+
+            }
+
+            .figure-avatar-6 {
+                bottom: calc(100% - 75%);
+                left: calc(100% - 11%);
+
+                @include media-breakpoint-up(xl) {
+                    bottom: calc(100% - 62%);
+                    left: calc(100% - 11%);
+                }
+
+                .avatar-rounded {
+
+                    img {
+                        width: 120px;
+                        height: 120px;
+
+                        @include media-breakpoint-up(xxl) {
+                            width: 130px;
+                            height: 130px;
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+        // end header-figure
+
+    }
+
+}

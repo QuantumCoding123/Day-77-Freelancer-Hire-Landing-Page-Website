@@ -1,0 +1,145 @@
+// ------------------
+// # Form Upload
+// ------------------
+
+// # Form Upload
+// 
+
+$form-upload-gap: 20px;
+
+$form-upload-item-background: $white;
+$form-upload-item-padding-y: 14px;
+$form-upload-item-padding-x: 14px;
+$form-upload-item-width: 250px;
+$form-upload-item-width-xxl: 350px;
+$form-upload-item-border-width: 1px;
+$form-upload-item-border-color: $primary;
+$form-upload-item-border-radius: 14px;
+
+$form-upload-item-icon-background: #F6EEFF;
+$form-upload-item-icon-color: $primary;
+$form-upload-item-icon-padding-y: 18px;
+$form-upload-item-icon-padding-x: 18px;
+$form-upload-item-icon-size: 22px;
+$form-upload-item-icon-gap: 14px;
+$form-upload-item-icon-border-radius: 17px;
+
+$form-upload-item-info-gap: 5px;
+
+$form-upload-item-file-title-font-size: $font-size-base;
+$form-upload-item-file-title-font-weight: $font-weight-semiBold;
+$form-upload-item-file-title-color: $dark;
+
+$form-upload-item-file-detail-font-size: 14px;
+$form-upload-item-file-detail-font-weight: $font-weight-semiBold;
+$form-upload-item-file-detail-color: $primary;
+
+$form-upload-btn-delete-background: #FF4A55;
+$form-upload-btn-delete-padding: 6px;
+$form-upload-btn-delete-border-radius: 50rem;
+
+$form-upload-btn-delete-icon-color: $white;
+$form-upload-btn-delete-icon-size: 12px;
+
+// # Upload Zone Item
+$form-upload-item-upload-zone-background: #F5F5F5;
+$form-upload-item-upload-zone-border-width: 2px;
+$form-upload-item-upload-zone-border-type: dashed;
+$form-upload-item-upload-zone-border-color: #C2C2C2;
+
+$form-upload-item-upload-zone-icon-background: $primary;
+$form-upload-item-upload-zone-icon-color: $white;
+
+// start form-upload
+.form-upload {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($form-upload-item-width, 1fr));
+    gap: $form-upload-gap;
+
+    @include media-breakpoint-up(xxl) {
+        grid-template-columns: repeat(auto-fill, minmax($form-upload-item-width-xxl, 1fr));
+    }
+
+    .upload-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        background-color: $form-upload-item-background;
+        padding: $form-upload-item-padding-y $form-upload-item-padding-x;
+        border-radius: $form-upload-item-border-radius;
+        border: $form-upload-item-border-width solid $form-upload-item-border-color;
+
+        .upload-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: $form-upload-item-icon-background;
+            color: $form-upload-item-icon-color;
+            padding: $form-upload-item-icon-padding-y $form-upload-item-icon-padding-x;
+            margin-right: $form-upload-item-icon-gap;
+            border-radius: $form-upload-item-icon-border-radius;
+
+            .svg-icon {
+                width: $form-upload-item-icon-size;
+                height: $form-upload-item-icon-size;
+            }
+
+        }
+
+        .file-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: $form-upload-item-info-gap;
+
+            .file-info-title {
+                @include font-size($form-upload-item-file-title-font-size);
+                font-weight: $form-upload-item-file-title-font-weight;
+                color: $form-upload-item-file-title-color;
+            }
+
+            .file-info-detail {
+                @include font-size($form-upload-item-file-detail-font-size);
+                font-weight: $form-upload-item-file-detail-font-weight;
+                color: $form-upload-item-file-detail-color;
+            }
+
+        }
+
+        .action-delete {
+            position: absolute;
+            display: inline-flex;
+            background-color: $form-upload-btn-delete-background;
+            color: $form-upload-btn-delete-icon-color;
+            padding: $form-upload-btn-delete-padding;
+            bottom: calc(100% - (#{$form-upload-btn-delete-icon-size} + #{$form-upload-btn-delete-padding} - 3px));
+            left: calc(100% - (#{$form-upload-btn-delete-icon-size} + #{$form-upload-btn-delete-padding} - 3px));
+            border-radius: $form-upload-btn-delete-border-radius;
+            border: none;
+
+            .svg-icon {
+                width: $form-upload-btn-delete-icon-size;
+                height: $form-upload-btn-delete-icon-size;
+            }
+
+        }
+
+    }
+
+    .upload-zone {
+
+        &.upload-item {
+            background-color: $form-upload-item-upload-zone-background;
+            border: $form-upload-item-upload-zone-border-width $form-upload-item-upload-zone-border-type $form-upload-item-upload-zone-border-color;
+
+            .upload-icon {
+                background-color: $form-upload-item-upload-zone-icon-background;
+                color: $form-upload-item-upload-zone-icon-color;
+            }
+
+        }
+
+    }
+
+}
+// end form-upload

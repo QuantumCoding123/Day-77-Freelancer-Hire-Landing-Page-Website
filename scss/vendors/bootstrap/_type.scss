@@ -1,0 +1,37 @@
+@import "../../../vendors/bootstrap/scss/type";
+
+// ------------------
+// # Heading Variant Classes
+// ------------------
+
+// # Heading Variant Classes
+// 
+
+// start type-heading-header classes
+@each $heading-header, $font-size in $heading-header-font-sizes {
+    .heading-header-#{$heading-header} {
+        @include font-size($font-size);
+        font-weight: $heading-header-font-weight;
+        line-height: $heading-header-line-height;
+    }
+}
+// end type-heading-header classes
+
+// start type-heading-section classes
+@each $heading-section, $font-size in $heading-section-font-sizes {
+    .heading-section-#{$heading-section} {
+        @include font-size($font-size);
+        font-weight: $heading-section-font-weight;
+        line-height: $heading-section-line-height;
+    }
+}
+// end type-heading-section classes
+
+// start type-heading-text classes
+@each $heading-text, $font-size in $heading-text-font-sizes {
+    .heading-text-#{$heading-text} {
+        @include font-size($font-size);
+        font-weight: $heading-text-font-weight;
+    }
+}
+// end type-heading-text classes

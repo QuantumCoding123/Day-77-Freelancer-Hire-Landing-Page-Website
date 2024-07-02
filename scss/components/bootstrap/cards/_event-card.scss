@@ -1,0 +1,239 @@
+// ------------------
+// # Event Card Grid
+// ------------------
+
+// # Event Card Grid
+// 
+
+$event-card-grid-background: $white;
+$event-card-grid-border-radius: 30px;
+$event-card-grid-shadow: $shadow-2;
+
+$event-card-grid-image-thumb-height: 250px;
+
+$event-card-grid-content-padding-y: 25px;
+$event-card-grid-content-padding-x: 25px;
+
+
+$event-card-grid-date-book-padding-y: 13px;
+$event-card-grid-date-book-padding-x: 13px;
+$event-card-grid-date-book-gap: 10px;
+$event-card-grid-date-book-border-radius: 50rem;
+
+$event-card-grid-date-font-size: 28px;
+$event-card-grid-date-font-weight: $font-weight-bold;
+$event-card-grid-date-color: $white;
+$event-card-grid-date-padding-y: 5px;
+$event-card-grid-date-padding-x: 0;
+
+$event-card-grid-date-text-font-size: 16px;
+$event-card-grid-date-text-font-weight: $font-weight-semiBold;
+$event-card-grid-date-text-color: $white;
+
+$event-card-grid-btn-book-background: $white;
+$event-card-grid-btn-book-background__hover: #FF477E;
+$event-card-grid-btn-book-color: $white;
+$event-card-grid-btn-book-color__hover: $event-card-grid-btn-book-color;
+$event-card-grid-btn-book-padding-y: 16px;
+$event-card-grid-btn-book-padding-x: 16px;
+$event-card-grid-btn-book-border-radius: 50rem;
+
+$event-card-grid-complete-date-book-background: #30C736;
+$event-card-grid-complete-btn-book-background: $white;
+$event-card-grid-complete-btn-book-color: #30C736;
+
+$event-card-grid-cancelled-date-book-background: #FF5353;
+$event-card-grid-cancelled-btn-book-background: $white;
+$event-card-grid-cancelled-btn-book-color: #FF5353;
+
+$event-card-grid-btn-book-icon-size: 25px;
+
+$event-card-grid-info-gap: 15px;
+
+$event-card-grid-categories-font-size: $font-size-base;
+$event-card-grid-categories-font-weight: $font-weight-semiBold;
+$event-card-grid-categories-letter-spacing: 2px;
+$event-card-grid-categories-color: $accent;
+$event-card-grid-categories-text-transform: uppercase;
+
+$event-card-grid-title-font-size: 20px;
+$event-card-grid-title-font-weight: $font-weight-semiBold;
+$event-card-grid-title-line-height: $line-height-base;
+$event-card-grid-title-color: $dark;
+$event-card-grid-title-gap: 5px;
+
+$event-card-grid-content-gap: 14px;
+
+$event-card-grid-summary-font-size: 15px;
+$event-card-grid-summary-font-weight: $font-weight-normal;
+$event-card-grid-summary-line-height: $line-height-base;
+$event-card-grid-summary-color: $dark;
+
+// start event-card-grid
+.event-card {
+    background-color: $event-card-grid-background;
+    height: 100%;
+    border-radius: $event-card-grid-border-radius;
+    box-shadow: $event-card-grid-shadow;
+    overflow: hidden;
+
+    .event-thumb {
+        position: relative;
+        width: 100%;
+        height: $event-card-grid-image-thumb-height;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            top: 0;
+            left: 0;
+            -webkit-user-drag: none;
+            user-select: none;
+        }
+
+    }
+
+    .event-content {
+        padding: $event-card-grid-content-padding-y $event-card-grid-content-padding-x;
+
+        .event-content-header {
+            position: relative;
+
+            .event-content-date-book {
+                position: absolute;
+                display: grid;
+                background-color: $dark;
+                padding: $event-card-grid-date-book-padding-y $event-card-grid-date-book-padding-x;
+                bottom: 0;
+                left: 0;
+                gap: $event-card-grid-date-book-gap;
+                border-radius: $event-card-grid-date-book-border-radius;
+
+                .event-date {
+                    display: grid;
+                    justify-content: center;
+                    @include font-size($event-card-grid-date-font-size);
+                    font-weight: $event-card-grid-date-font-weight;
+                    color: $event-card-grid-date-color;
+                    padding: $event-card-grid-date-padding-y $event-card-grid-date-padding-x;
+                    text-align: center;
+
+                    span {
+                        @include font-size($event-card-grid-date-text-font-size);
+                        font-weight: $event-card-grid-date-text-font-weight;
+                        color: rgba($event-card-grid-date-text-color, .44);
+                    }
+
+                }
+
+                .btn-event-book {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: rgba($event-card-grid-btn-book-background, .11);
+                    color: $event-card-grid-btn-book-color;
+                    padding: $event-card-grid-btn-book-padding-y $event-card-grid-btn-book-padding-x;
+                    border-radius: $event-card-grid-btn-book-border-radius;
+                    box-shadow: none;
+
+                    &:hover {
+                        background-color: $event-card-grid-btn-book-background__hover;
+                        color: $event-card-grid-btn-book-color__hover;
+                    }
+
+                    svg {
+                        width: $event-card-grid-btn-book-icon-size;
+                        height: $event-card-grid-btn-book-icon-size;
+                    }
+
+                }
+
+            }
+
+            .event-content-info {
+                padding-left: $event-card-grid-date-book-padding-x * 2 + $event-card-grid-btn-book-padding-x * 2 + $event-card-grid-btn-book-icon-size + $event-card-grid-info-gap;
+                
+                .event-categories {
+                    @include font-size($event-card-grid-categories-font-size);
+                    font-weight: $event-card-grid-categories-font-weight;
+                    letter-spacing: $event-card-grid-categories-letter-spacing;
+                    text-transform: $event-card-grid-categories-text-transform;
+
+                    .event-categories-link {
+                        color: $event-card-grid-categories-color;
+                        text-decoration: none;
+                    }
+
+                }
+
+                .event-title {
+                    @include font-size($event-card-grid-title-font-size);
+                    font-weight: $event-card-grid-title-font-weight;
+                    line-height: $event-card-grid-title-line-height;
+                    margin-bottom: 0;
+                    margin-top: $event-card-grid-title-gap;
+
+                    .event-title-link {
+                        color: $event-card-grid-title-color;
+                        text-decoration: none;
+                    }
+
+                }
+
+            }
+
+        }
+
+        .event-content-footer {
+            margin-top: $event-card-grid-content-gap;
+
+            .event-summary {
+                @include font-size($event-card-grid-summary-font-size);
+                font-weight: $event-card-grid-summary-font-weight;
+                line-height: $event-card-grid-summary-line-height;
+                color: $event-card-grid-summary-color;
+
+                p:last-child {
+                    margin-bottom: 0;
+                }
+
+            }
+
+        }
+
+    }
+
+    &.complete {
+
+        .event-content-date-book {
+            background-color: $event-card-grid-complete-date-book-background!important;
+
+            .btn-event-book {
+                background-color: $event-card-grid-complete-btn-book-background!important;
+                color: $event-card-grid-complete-btn-book-color!important;
+            }
+
+        }
+
+    }
+
+    &.cancelled {
+
+        .event-content-date-book {
+            background-color: $event-card-grid-cancelled-date-book-background!important;
+
+            .btn-event-book {
+                background-color: $event-card-grid-cancelled-btn-book-background!important;
+                color: $event-card-grid-cancelled-btn-book-color!important;
+            }
+
+        }
+
+    }
+
+}
+// end event-card-grid

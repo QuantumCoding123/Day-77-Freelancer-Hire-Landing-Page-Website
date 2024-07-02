@@ -1,0 +1,21 @@
+@import "../../../vendors/bootstrap/scss/images";
+
+// ------------------
+// # Avatar Image
+// ------------------
+
+// # Avatar Image
+// 
+
+$img-avatar-size: 120px;
+$img-avatar-border-radius: 10px;
+
+// start img-avatar
+.img-avatar {
+    width: $img-avatar-size;
+    height: $img-avatar-size;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: $img-avatar-border-radius;
+}
+// end img-avatar

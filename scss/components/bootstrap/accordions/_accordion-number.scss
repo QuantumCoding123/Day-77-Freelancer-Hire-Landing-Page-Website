@@ -1,0 +1,142 @@
+// ------------------
+// # Accordion Number
+// ------------------
+
+// # Accordion Number
+// 
+
+$accordion-number-item-background: $white;
+$accordion-number-item-padding: 20px;
+$accordion-number-item-gap: 34px;
+$accordion-number-item-border-radius: 20px;
+$accordion-number-item-shadow: $shadow-2;
+$accordion-number-item-shadow__not-collapsed: $shadow-2;
+
+$accordion-number-number-font-size: 35px;
+$accordion-number-number-font-weight: $font-weight-semiBold;
+$accordion-number-number-width: 80px;
+$accordion-number-number-height: $accordion-number-number-width;
+$accordion-number-number-width-sm: 70px;
+$accordion-number-number-height-sm: $accordion-number-number-width-sm;
+$accordion-number-number-gap: 24px;
+$accordion-number-number-border-radius: 24px;
+
+$accordion-number-content-padding-y: 10px;
+$accordion-number-content-padding-x: 25px;
+
+$accordion-number-header-font-size: 27px;
+$accordion-number-header-font-weight: $font-weight-semiBold;
+$accordion-number-header-color: $dark;
+
+$accordion-number-body-font-size: $font-size-base;
+$accordion-number-body-font-weight: $font-weight-normal;
+$accordion-number-body-color: $philippine-gray;
+$accordion-number-body-gap: 14px;
+
+$accordion-number-arrow-gap: 40px;
+$accordion-number-arrow-icon-color: $primary;
+$accordion-number-arrow-icon-size: 20px;
+
+// start accordion-number
+.accordion {
+
+    &.accordion-number {
+
+        .accordion-item {
+            border: 0;
+
+            &:not(:first-child) {
+                margin-top: $accordion-number-item-gap;
+            }
+
+            .accordion-button {
+                background-color: $accordion-number-item-background;
+                padding: $accordion-number-item-padding;
+                border-radius: $accordion-number-item-border-radius;
+                box-shadow: $accordion-number-item-shadow;
+
+                &:after {
+                    content: none;
+                }
+
+                &:not(.collapsed) {
+                    background-color: transparent;
+                    box-shadow: $accordion-number-item-shadow__not-collapsed;
+
+                    .accordion-arrow {
+                        opacity: 0;
+                    }
+
+                }
+
+                .accordion-number {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    @include font-size($accordion-number-number-font-size);
+                    font-weight: $accordion-number-number-font-weight;
+                    width: $accordion-number-number-width;
+                    min-width: $accordion-number-number-width;
+                    height: $accordion-number-number-height;
+                    margin-right: $accordion-number-number-gap;
+                    border-radius: $accordion-number-number-border-radius;
+
+                    @include media-breakpoint-between(xs, md) {
+                        width: $accordion-number-number-width-sm;
+                        min-width: $accordion-number-number-width-sm;
+                        height: $accordion-number-number-height-sm;
+                    }
+
+                }
+
+                .accordion-content {
+                    display: flex;
+                    flex-direction: column;
+                    padding-top: $accordion-number-content-padding-y;
+                    padding-bottom: $accordion-number-content-padding-y;
+                    padding-right: $accordion-number-content-padding-x;
+                    width: 100%;
+
+                    .accordion-header {
+                        @include font-size($accordion-number-header-font-size);
+                        font-weight: $accordion-number-header-font-weight;
+                        color: $accordion-number-header-color;
+                        padding-right: 20px + $accordion-number-arrow-gap;
+                        margin-top: auto;
+                        margin-bottom: auto;
+                        width: inherit;
+                    }
+
+                    .accordion-body {
+                        @include font-size($accordion-number-body-font-size);
+                        font-weight: $accordion-number-body-font-weight;
+                        color: $accordion-number-body-color;
+                        margin-top: $accordion-number-body-gap;
+                        padding: 0;
+                    }
+
+                }
+
+                .accordion-arrow {
+                    position: absolute;
+                    top: 50%;
+                    right: $accordion-number-arrow-gap;
+                    transform: translateY(-50%);
+                    transition: opacity $transition-base;
+
+                    .svg-icon {
+                        color: $accordion-number-arrow-icon-color;
+                        width: $accordion-number-arrow-icon-size;
+                        height: $accordion-number-arrow-icon-size;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+// end accordion-number

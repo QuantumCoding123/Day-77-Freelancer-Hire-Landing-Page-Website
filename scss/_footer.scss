@@ -1,0 +1,132 @@
+@use "bootstrap" as *;
+
+// ------------------
+// # Footer
+// ------------------
+
+// # Footer
+// 
+
+$footer-form-newsletter-width: 485px;
+$footer-form-newsletter-background: transparent;
+$footer-form-newsletter-border-width: 1px;
+$footer-form-newsletter-border-type: solid;
+$footer-form-newsletter-border-color: #363843;
+
+$footer-form-newsletter-input-color: $white;
+$footer-form-newsletter-input-padding-y-xl: 0;
+$footer-form-newsletter-input-padding-x-xl: 25px;
+$footer-form-newsletter-input-placeholder: #72737C;
+
+$footer-list-title-font-size: 18px;
+$footer-list-title-font-weight: $font-weight-semiBold;
+$footer-list-title-color: $white;
+$footer-list-title-gap: 20px;
+
+$footer-about-brand-width: 130px;
+$footer-about-description-font-size: 14px;
+$footer-about-description-font-weight: $font-weight-normal;
+$footer-about-description-line-height: $line-height-base;
+$footer-about-description-color: $white;
+
+$footer-link-list-font-size: 14px;
+$footer-link-list-font-weight: 400;
+$footer-link-list-color: $white;
+$footer-link-list-padding-y: 12px;
+$footer-link-list-padding-x: 0;
+$footer-link-list-icon-size: 22px;
+$footer-link-list-icon-gap: 13px;
+
+// start footer
+.footer {
+
+    form {
+        max-width: $footer-form-newsletter-width;
+
+        .form-newsletter {
+            background-color: $footer-form-newsletter-background;
+            border: $footer-form-newsletter-border-width $footer-form-newsletter-border-type $footer-form-newsletter-border-color;
+
+            .form-control {
+                color: $footer-form-newsletter-input-color;
+                
+                @include media-breakpoint-up(xl) {
+                    padding: $footer-form-newsletter-input-padding-y-xl $footer-form-newsletter-input-padding-x-xl;
+                }
+
+                &::placeholder {
+                    color: $footer-form-newsletter-input-placeholder;
+                }
+
+            }
+
+        }
+
+    }
+
+    .footer-widget {
+
+        .footer-title {
+            font-size: $footer-list-title-font-size;
+            font-weight: $footer-list-title-font-weight;
+            color: $footer-list-title-color;
+            margin-bottom: $footer-list-title-gap;
+        }
+
+        &.about {
+            display: flex;
+            flex-direction: column;
+
+            .footer-brand {
+                img{
+                    max-width: $footer-about-brand-width;
+                }
+            }
+
+            .footer-description {
+                font-size: $footer-about-description-font-size;
+                font-weight: $footer-about-description-font-weight;
+                line-height: $footer-about-description-line-height;
+                color: $footer-about-description-color;
+                margin-bottom: 0;
+            }
+
+        }
+
+        &.link-list {
+
+            .footer-link-list {
+                padding-left: 0;
+                margin-bottom: 0;
+                list-style: none;
+
+                .link-item {
+                    display: flex;
+                    padding: $footer-link-list-padding-y $footer-link-list-padding-x;
+
+                    .svg-icon {
+                        color: $white;
+                        width: $footer-link-list-icon-size;
+                        min-width: $footer-link-list-icon-size;
+                        height: $footer-link-list-icon-size;
+                        margin-right: $footer-link-list-icon-gap;
+                    }
+
+                    .link {
+                        display: inline-flex;
+                        font-size: $footer-link-list-font-size;
+                        font-weight: $footer-link-list-font-weight;
+                        color: $footer-link-list-color;
+                        text-decoration: none;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+// end footer

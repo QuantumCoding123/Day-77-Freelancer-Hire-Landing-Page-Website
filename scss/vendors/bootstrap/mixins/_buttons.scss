@@ -1,0 +1,107 @@
+// ------------------
+// # Btn Variant Mixin
+// # Btn Outline Variant Mixin
+// ------------------
+
+// # Btn Variant Mixin
+// 
+
+// start btn-variant-mixin
+@mixin button-variant(
+    $background,
+    $border,
+    $color: color-contrast($background),
+    $hover-background: if($color == $color-contrast-light, shade-color($background, $btn-hover-bg-shade-amount), tint-color($background, $btn-hover-bg-tint-amount)),
+    $hover-border: if($color == $color-contrast-light, shade-color($border, $btn-hover-border-shade-amount), tint-color($border, $btn-hover-border-tint-amount)),
+    $hover-color: color-contrast($hover-background),
+    $active-background: if($color == $color-contrast-light, shade-color($background, $btn-active-bg-shade-amount), tint-color($background, $btn-active-bg-tint-amount)),
+    $active-border: if($color == $color-contrast-light, shade-color($border, $btn-active-border-shade-amount), tint-color($border, $btn-active-border-tint-amount)),
+    $active-color: color-contrast($active-background),
+    $disabled-background: $background,
+    $disabled-border: $border,
+    $disabled-color: color-contrast($disabled-background)
+)   {
+        color: $color;
+        @include gradient-bg($background);
+        border-color: $border;
+
+    &:hover {
+        color: $hover-color;
+        @include gradient-bg($hover-background);
+        border-color: $hover-border;
+    }
+
+    .btn-check:focus + &,
+    &:focus {
+        color: $hover-color;
+        @include gradient-bg($hover-background);
+        border-color: $hover-border;
+        }
+
+    .btn-check:checked + &,
+    .btn-check:active + &,
+    &:active,
+    &.active,
+    .show > &.dropdown-toggle {
+        color: $active-color;
+        background-color: $active-background;
+        // Remove CSS gradients if they're enabled
+        background-image: if($enable-gradients, none, null);
+        border-color: $active-border;
+        }
+
+    &:disabled,
+    &.disabled {
+        color: $disabled-color;
+        background-color: $disabled-background;
+        // Remove CSS gradients if they're enabled
+        background-image: if($enable-gradients, none, null);
+        border-color: $disabled-border;
+    }
+
+}
+// end btn-variant-mixin
+
+// # Btn Outline Variant Mixin
+// 
+
+// start btn-outline-variant-mixin
+@mixin button-outline-variant(
+    $color,
+    $color-hover: $color,
+    $active-border: $color,
+    $active-color: $color
+)   {
+        color: $color;
+        border-color: $color;
+
+    &:hover {
+        color: $color-hover;
+        border-color: $active-border;
+    }
+
+    .btn-check:focus + &,
+    &:focus {
+        box-shadow: none;
+    }
+
+    .btn-check:checked + &,
+    .btn-check:active + &,
+    &:active,
+    &.active,
+    &.dropdown-toggle.show {
+        color: $active-color;
+        border-color: $active-border;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    &:disabled,
+    &.disabled {
+        color: $color;
+        background-color: transparent;
+    }
+}
+// start btn-outline-variant-mixin

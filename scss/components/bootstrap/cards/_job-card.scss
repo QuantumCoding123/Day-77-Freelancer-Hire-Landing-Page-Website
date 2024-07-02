@@ -1,0 +1,402 @@
+// ------------------
+// # Job Card Grid
+// # Job Card Harizontal
+// ------------------
+
+// # Job Card Grid
+// 
+
+$job-card-grid-background: $white;
+$job-card-grid-padding-y: 40px;
+$job-card-grid-padding-x: 30px;
+$job-card-grid-border-radius: 18px;
+$job-card-grid-shadow: 0px 2px 28px 0px rgba(62, 53, 120, 0.04);
+$job-card-grid-shadow__hover: $shadow-1;
+
+$job-card-grid-info-gap: 40px;
+
+$job-card-grid-image-gap: 20px;
+$job-card-grid-image-size: 115px;
+$job-card-grid-image-border-radius: 50rem;
+
+$job-card-grid-title-font-size: 20px;
+$job-card-grid-title-font-weight: $font-weight-semiBold;
+$job-card-grid-title-color: $dark;
+$job-card-grid-title-gap: 14px;
+
+$job-card-grid-author-font-size: 16px;
+$job-card-grid-author-font-weight: 400;
+$job-card-grid-author-color: $primary;
+
+$job-card-grid-detail-item-gap: 18px;
+
+$job-card-grid-detail-item-icon-color: $dark-gray-x11;
+$job-card-grid-detail-item-icon-size: 24px;
+
+$job-card-grid-detail-item-center-font-size: 15px;
+$job-card-grid-detail-item-center-font-weight: $font-weight-medium;
+$job-card-grid-detail-item-center-color: $dark-charcoal;
+$job-card-grid-detail-item-center-padding-x-xl: 10px;
+
+$job-card-grid-detail-item-end-font-size: 15px;
+$job-card-grid-detail-item-end-font-weight: $font-weight-normal;
+$job-card-grid-detail-item-end-color: $dark-gray-x11;
+
+$job-card-grid-action-gap: 40px;
+
+$job-card-grid-action-btn-apply-width: 100%;
+$job-card-grid-action-btn-apply-gap: 15px;
+
+$job-card-grid-dropdown-btn-color: #363848;
+$job-card-grid-dropdown-btn-gap: 10px;
+
+$job-card-grid-dropdown-menu-border-radius: 5px;
+$job-card-grid-dropdown-menu-shadow: $shadow-1;
+
+$job-card-grid-dropdown-menu-item-font-size: 14px;
+$job-card-grid-dropdown-menu-item-font-weight: $font-weight-normal;
+$job-card-grid-dropdown-menu-item-background__hover: $alice-blue;
+$job-card-grid-dropdown-menu-item-color: $dark;
+$job-card-grid-dropdown-menu-item-color__hover: $primary;
+$job-card-grid-dropdown-menu-item-padding-y: 5px;
+$job-card-grid-dropdown-menu-item-padding-x: 20px;
+
+// start job-card-grid
+.job-card-grid {
+    position: relative;
+    background-color: $job-card-grid-background;
+    padding: $job-card-grid-padding-y $job-card-grid-padding-x;
+    border-radius: $job-card-grid-border-radius;
+    box-shadow: $job-card-grid-shadow;
+    transition: $transition-base;
+
+    &:hover {
+        box-shadow: $job-card-grid-shadow__hover
+    }
+
+    .job-info {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: $job-card-grid-info-gap;
+
+        .job-image {
+            margin-bottom: $job-card-grid-image-gap;
+
+            img {
+                width: $job-card-grid-image-size;
+                height: $job-card-grid-image-size;
+                border-radius: $job-card-grid-image-border-radius;
+            }
+
+        }
+
+        .job-title {
+            @include font-size($job-card-grid-title-font-size);
+            font-weight: $job-card-grid-title-font-weight;
+            margin-bottom: $job-card-grid-title-gap;
+            text-align: center;
+
+            a {
+                color: $job-card-grid-title-color;
+                text-decoration: none;
+            }
+
+        }
+
+        .job-author {
+            @include font-size($job-card-grid-author-font-size);
+            font-weight: $job-card-grid-author-font-weight;
+            text-align: center;
+
+            a {
+                color: $job-card-grid-author-color;
+                text-decoration: none;
+            }
+
+        }
+
+    }
+
+    .job-detail {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+
+        .job-detail-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &:not(:first-child) {
+                margin-top: $job-card-grid-detail-item-gap;
+            }
+
+            .svg-icon {
+                color: $job-card-grid-detail-item-icon-color;
+                width: $job-card-grid-detail-item-icon-size;
+                height: $job-card-grid-detail-item-icon-size;
+            }
+
+            .job-detail-first {
+                text-align: left;
+            }
+    
+            .job-detail-center {
+                text-align: center;
+
+                @include media-breakpoint-up(xl) {
+                    margin-left: $job-card-grid-detail-item-center-padding-x-xl;
+                    margin-right: $job-card-grid-detail-item-center-padding-x-xl;
+                }
+
+                .job-detail-text {
+                    @include font-size($job-card-grid-detail-item-center-font-size);
+                    font-weight: $job-card-grid-detail-item-center-font-weight;
+                    color: $job-card-grid-detail-item-center-color;
+                }
+
+            }
+
+            .job-detail-end {
+                text-align: right;
+
+                .job-detail-text {
+                    @include font-size($job-card-grid-detail-item-end-font-size);
+                    font-weight: $job-card-grid-detail-item-end-font-weight;
+                    color: $job-card-grid-detail-item-end-color;
+                }
+
+            }
+
+        }
+
+    }
+
+    .job-action {
+        display: flex;
+        align-items: center;
+        margin-top: $job-card-grid-action-gap;
+
+        .btn {
+
+            &.btn-apply {
+                width: $job-card-grid-action-btn-apply-width;
+                margin-left: $job-card-grid-action-btn-apply-gap;
+            }
+
+            &:hover {
+                box-shadow: none;
+            }
+
+        }
+
+    }
+
+    .job-dropdown {
+        position: absolute;
+        top: $job-card-grid-padding-y;
+        right: $job-card-grid-padding-x;
+
+        .job-dropdown-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: transparent;
+            color: $job-card-grid-dropdown-btn-color;
+            border: 0;
+            padding: 0;
+            padding-bottom: $job-card-grid-dropdown-btn-gap;
+        }
+
+        .dropdown-menu {
+            border: 0;
+            border-radius: $job-card-grid-dropdown-menu-border-radius;
+            box-shadow: $job-card-grid-dropdown-menu-shadow;
+
+            .dropdown-item {
+                @include font-size($job-card-grid-dropdown-menu-item-font-size);
+                font-weight: $job-card-grid-dropdown-menu-item-font-weight;
+                color: $job-card-grid-dropdown-menu-item-color;
+                padding: $job-card-grid-dropdown-menu-item-padding-y $job-card-grid-dropdown-menu-item-padding-x;
+
+                &:hover {
+                    background-color: $job-card-grid-dropdown-menu-item-background__hover;
+                    color: $job-card-grid-dropdown-menu-item-color__hover;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+// end job-card-grid
+
+// # Job Card Harizontal
+// 
+
+$job-card-harizontal-background: $white;
+$job-card-harizontal-padding-y: 20px;
+$job-card-harizontal-padding-x: 20px;
+$job-card-harizontal-border-radius: 18px;
+$job-card-harizontal-shadow: $shadow-2;
+$job-card-harizontal-shadow__hover: $shadow-1;
+
+$job-card-harizontal-image-size: 80px;
+$job-card-harizontal-image-border-radius: 15px;
+
+$job-card-harizontal-info-gap: 10px;
+
+$job-card-harizontal-title-font-size: 20px;
+$job-card-harizontal-title-font-weight: $font-weight-semiBold;
+$job-card-harizontal-title-color: #000000;
+
+$job-card-harizontal-author-font-size: 15px;
+$job-card-harizontal-author-font-weight: $font-weight-medium;
+$job-card-harizontal-author-color: $primary;
+
+$job-card-harizontal-info-card-gap: 15px;
+$job-card-harizontal-info-card-gap-xl: 20px;
+
+$job-card-action-btn-gap: 15px;
+$job-card-action-btn-gap-md: 15px;
+
+.job-card-harizontal {
+    position: relative;
+    display: grid;
+    background-color: $job-card-harizontal-background;
+    padding: $job-card-harizontal-padding-y $job-card-harizontal-padding-x;
+    border-radius: $job-card-harizontal-border-radius;
+    box-shadow: $job-card-harizontal-shadow;
+    transition: box-shadow $transition-base;
+
+    @include media-breakpoint-up(md) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    @include media-breakpoint-up(xl) {
+        justify-content: space-between;
+    }
+
+    &:hover {
+        box-shadow: $job-card-harizontal-shadow__hover;
+    }
+
+    .job-info {
+        display: flex;
+        align-items: center;
+
+        @include media-breakpoint-up(xl) {
+            flex: 1 1 30%;
+        }
+
+        .job-image {
+            margin-right: 20px;
+
+            img {
+                width: $job-card-harizontal-image-size;
+                height: $job-card-harizontal-image-size;
+                object-fit: cover;
+                object-position: center;
+                border-radius: $job-card-harizontal-image-border-radius;
+            }
+
+        }
+
+        .job-info-inner {
+            display: grid;
+            gap: $job-card-harizontal-info-gap;
+
+            .job-title {
+                @include font-size($job-card-harizontal-title-font-size);
+                font-weight: $job-card-harizontal-title-font-weight;
+                margin-bottom: 0;
+
+                a {
+                    color: $job-card-harizontal-title-color;
+                    text-decoration: none;
+                }
+                
+            }
+
+            .job-author {
+                @include font-size($job-card-harizontal-author-font-size);
+                font-weight: $job-card-harizontal-author-font-weight;
+                
+                a {
+                    color: $job-card-harizontal-author-color;
+                    text-decoration: none;
+                }
+
+            }
+
+        }
+
+    }
+
+    .job-info-card-collapse {
+
+        @include media-breakpoint-down(xl) {
+            width: 100%;
+            order: 3;
+        }
+
+        @include media-breakpoint-up(xl) {
+            display: flex;
+            flex-basis: auto;
+            flex: 1 1 40%;
+        }
+
+        .job-info-card {
+            display: grid;
+            gap: $job-card-harizontal-info-card-gap;
+
+            @include media-breakpoint-down(xl) {
+                margin-top: $job-card-harizontal-info-card-gap-xl;
+            }
+
+            @include media-breakpoint-up(xl) {
+                display: flex;
+                width: 100%;
+                gap: $job-card-harizontal-info-card-gap-xl;
+            }
+
+            .info-card {
+                flex: 1 1 50%;
+            }
+
+        }
+
+    }
+
+    .job-action {
+        display: flex;
+        align-items: center;
+        gap: $job-card-action-btn-gap;
+
+        @include media-breakpoint-down(md) {
+            margin-top: $job-card-action-btn-gap-md;
+        }
+
+        @include media-breakpoint-between(md, xl) {
+            margin-left: auto;
+        }
+
+        @include media-breakpoint-up(xl) {
+            justify-content: end;
+            flex: 1 1 30%;
+        }
+
+        .btn {
+
+            &:hover {
+                box-shadow: none;
+            }
+
+        }
+
+    }
+
+}

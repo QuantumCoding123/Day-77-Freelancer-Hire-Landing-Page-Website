@@ -1,0 +1,67 @@
+// ------------------
+// # Info Card
+// ------------------
+
+// # Info Card
+// 
+
+$info-card-icon-background: $gray;
+$info-card-icon-color: $white;
+$info-card-icon-padding: 13px;
+$info-card-icon-size: 28px;
+$info-card-icon-gap: 15px;
+$info-card-icon-border-radius: 10px;
+
+$info-card-content-gap: 5px;
+
+$info-card-title-font-size: 17px;
+$info-card-title-font-weight: $font-weight-medium;
+$info-card-title-color: $dark;
+
+$info-card-desc-font-size: 15px;
+$info-card-desc-font-weight: $font-weight-normal;
+$info-card-desc-color: $philippine-gray-100;
+
+// start info-card
+.info-card {
+    display: flex;
+    align-items: center;
+
+    .info-card-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $info-card-icon-background;
+        color: $info-card-icon-color;
+        @include padding($info-card-icon-padding);
+        border-radius: $info-card-icon-border-radius;
+
+        .svg-icon {
+            width: $info-card-icon-size;
+            height: $info-card-icon-size;
+        }
+
+    }
+    
+    .info-card-content {
+        display: grid;
+        margin-left: $info-card-icon-gap;
+        gap: $info-card-content-gap;
+
+        .info-card-title {
+            @include font-size($info-card-title-font-size);
+            font-weight: $info-card-title-font-weight;
+            color: $info-card-title-color;
+            margin-bottom: 0;
+        }
+
+        .info-card-desc {
+            @include font-size($info-card-desc-font-size);
+            font-weight: $info-card-desc-font-weight;
+            color: $info-card-desc-color;
+        }
+
+    }
+
+}
+// end info-card

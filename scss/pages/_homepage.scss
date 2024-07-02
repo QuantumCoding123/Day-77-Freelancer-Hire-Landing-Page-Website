@@ -1,0 +1,138 @@
+// ------------------
+// # Header Section
+// # How it work Section
+// ------------------
+
+body.page__homepage {
+
+    .main {
+
+        // # Header Section
+        // 
+
+        // start header-slider
+        .header-slider {
+            
+            @include media-breakpoint-between(lg, xxl) {
+                .heading-header-1 {
+                    font-size: calc(1.5rem + 1.5vw);
+                }
+            }
+
+        }
+        // end header-slider
+
+        // start hero-image
+        .hero-image-img {
+            width: 100%;
+            height: auto;
+
+            @include media-breakpoint-up(lg) {
+                position: absolute;
+                width: 40rem;
+                bottom: 0;
+                right: 0;
+            }
+
+            @include media-breakpoint-up(xl) {
+                width: 52rem;
+            }
+
+            @include media-breakpoint-up(xxl) {
+                width: 57rem;
+            }
+
+        }
+        // end hero-image
+
+        // start header-slider-pagination
+        .header-slider-pagination {
+            
+            .swiper-pagination-bullet {
+                background-color: #D7D0FB;
+                width: 25px;
+                height: 6px;
+                border-radius: 50rem;
+
+                &-active {
+                    background-color: $primary;
+                    width: 45px;
+                }
+
+            }
+
+        }
+        // end header-slider-pagination
+
+        // # How it Work Section
+        // 
+
+        // start how-it-work-image
+        .how-it-work-image-img {
+            max-width: 100%;
+            max-height: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .how-it-work-figure-1 {
+            bottom: calc(100% - 0rem);
+            left: calc(100% - 9rem);
+            width: 15rem;
+
+            @include media-breakpoint-between(md, lg) {
+                width: 25rem;
+                bottom: calc(100% - 25rem);
+                left: calc(100% - 15rem);
+            }
+
+            @include media-breakpoint-up(xl) {
+                bottom: calc(100% - 25rem);
+                left: calc(100% - 10rem);
+                width: 17rem;
+            }
+
+        }
+
+        .how-it-work-figure-2 {
+            bottom: calc(100% - 2rem);
+            right: calc(100% - 8rem);
+            width: 3rem;
+
+            @include media-breakpoint-between(md, lg) {
+                width: 4rem;
+                right: calc(100% - 10rem);
+            }
+
+            @include media-breakpoint-up(xl) {
+                bottom: calc(100% - 2rem);
+                right: calc(100% - 12rem);
+                width: 5rem;
+            }
+
+        }
+
+        .how-it-work-figure-3 {
+            top: calc(100% - 5rem);
+            right: calc(100% - 2rem);
+            width: 3rem;
+
+            @include media-breakpoint-between(md, lg) {
+                top: calc(100% - 7rem);
+                right: calc(100% - 3rem);
+                width: 5rem;
+            }
+
+            @include media-breakpoint-up(xl) {
+                top: calc(100% - 8rem);
+                right: calc(100% - 3rem);
+                width: 5rem;
+            }
+
+        }
+        // end how-it-work-image
+
+    }
+
+}

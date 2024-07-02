@@ -1,0 +1,276 @@
+@import "../../../vendors/bootstrap/scss/utilities";
+
+// ------------------
+// # Utils Colors
+// # Utils Sizing
+// # Utils Borders
+// # Utils Shadow
+// # Utils Position
+// # Utils Flex
+// # Utils Overflow
+// # Utils Opacity
+// ------------------
+
+$utilities: map-merge(
+  $utilities,
+  (
+
+    // # Utils Colors
+    // 
+
+    // start utils-colors
+    "color": (
+        property: color,
+        class: text,
+        local-vars: (
+            "text-opacity": 1
+        ),
+        values: map-merge(
+            $utilities-text-colors,
+            (
+            "reset": inherit,
+            )
+        )
+    ),
+    "text-opacity": (
+        css-var: true,
+        class: text-opacity,
+        values: (
+            17: .17,
+            25: .25,
+            33: .33,
+            50: .5,
+            75: .75,
+            100: 1
+        )
+    ),
+    // end utils-colors
+    // start utils-bg-colors
+    "background-color": (
+        property: background-color,
+        class: bg,
+        local-vars: (
+            "bg-opacity": 1
+        ),
+        values: map-merge(
+            $utilities-bg-colors,
+            (
+            "transparent": transparent
+            )
+        )
+    ),
+    // end utils-bg-colors
+    // start utils-text
+    "font-weight": (
+        property: font-weight,
+        class: fw,
+        values: (
+            light: $font-weight-light,
+            lighter: $font-weight-lighter,
+            normal: $font-weight-normal,
+            medium: $font-weight-medium,
+            semiBold: $font-weight-semiBold,
+            bold: $font-weight-bold,
+            bolder: $font-weight-bolder
+        )
+    ),
+    // end utils-text
+
+    // # Utils Sizing
+    // 
+
+    // start utils-width
+    "width": (
+        responsive: true,
+        property: width,
+        class: w,
+        values: (
+            25: 25%,
+            30: 30%,
+            34: 34%,
+            35: 35%,
+            40: 40%,
+            45: 45%,
+            50: 50%,
+            60: 60%,
+            65: 65%,
+            70: 70%,
+            75: 75%,
+            85: 85%,
+            90: 90%,
+            95: 95%,
+            100: 100%,
+            auto: auto
+        )
+    ),
+    "height": (
+        responsive: true,
+        property: height,
+        class: h,
+        values: (
+            25: 25%,
+            30: 30%,
+            34: 34%,
+            35: 35%,
+            40: 40%,
+            45: 45%,
+            50: 50%,
+            60: 60%,
+            65: 65%,
+            70: 70%,
+            75: 75%,
+            85: 85%,
+            90: 90%,
+            95: 95%,
+            100: 100%,
+            auto: auto
+        )
+    ),
+    // end utils-width
+    // start icon-size
+    "icon-size": (
+        responsive: true,
+        property: width height,
+        class: is,
+        values: (
+            14: 14px,
+            16: 16px,
+            20: 20px,
+            80: 80px,
+            100: 100px,
+        )
+    ),
+    // end icon-size
+
+    // # Utils Borders
+    // 
+
+    // start utils-border
+    "border-color": (
+        property: border-color,
+        class: border,
+        values: map-merge($theme-colors, 
+            (
+            "white": $white,
+            "arsenic": $arsenic,
+            "alice-blue": $alice-blue
+            )
+        )
+    ),
+    // end utils-border
+    // start utils-border-radius
+    "rounded": (
+        property: border-radius,
+        class: rounded,
+        values: (
+            null: $border-radius,
+            0: 0,
+            20: 20px,
+            40: 40px,
+            circle: 50%,
+            pill: $border-radius-pill
+        )
+    ),
+    // end utils-border-radius
+
+    // # Utils Shadow
+    // 
+
+    // start utils-shadow
+    "shadow": (
+        property: box-shadow,
+        class: shadow,
+        values: (
+            null: $box-shadow,
+            sm: $box-shadow-sm,
+            lg: $box-shadow-lg,
+            1: $shadow-1,
+            2: $shadow-2,
+            none: none,
+        )
+    ),
+    // end utils-shadow
+
+    // # Utils Position
+    // 
+    
+    // start utils-position
+    "position": (
+        responsive: true,
+        property: position,
+        values: static relative absolute fixed sticky
+    ),
+    "top": (
+        responsive: true,
+        property: top,
+        values: $position-values
+    ),
+    "bottom": (
+        responsive: true,
+        property: bottom,
+        values: $position-values
+    ),
+    "start": (
+        responsive: true,
+        property: left,
+        class: start,
+        values: $position-values
+    ),
+    "end": (
+        responsive: true,
+        property: right,
+        class: end,
+        values: $position-values
+    ),
+    "translate-middle": (
+        responsive: true,
+        property: transform,
+        class: translate-middle,
+        values: (
+            null: translate(-50%, -50%),
+            x: translateX(-50%),
+            y: translateY(-50%),
+        )
+    ),
+    // end utils-position
+
+    // # Utils Flex
+    // 
+    
+    // start flex-fill
+    "flex": (
+        responsive: true,
+        property: flex,
+        values: (
+            fill: 1 1 auto,
+            nofill: 0 0 auto
+        )
+    ),
+    // end flex-fill
+
+    // # Utils Overflow
+    // 
+
+    "overflow": (
+        responsive: true,
+        property: overflow,
+        values: auto hidden visible scroll,
+    ),
+
+    // # Utils Opacity
+    // 
+
+    "opacity": (
+      property: opacity,
+      values: (
+        0: 0,
+        25: .25,
+        50: .5,
+        60: .6,
+        75: .75,
+        100: 1,
+      )
+    ),
+
+  )
+);
